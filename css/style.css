@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --mainYellow: #ffb31a;
+  --mainSkyBlue: #339cff;
+  --mainPurple: #ff33e0;
+  --mainGreen: #ed2b18;
+}
+body {
+  font-family: "Merriweather", Georgia, serif;
+}
+.main {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(53, 85, 60, 0.2), rgba(45, 62, 80, 0.5)),
+    url(../img/1.jpeg) center no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  animation: slider 12s infinite;
+}
+.heros {
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.heros h1 {
+  font-size: 6rem;
+  color: var(--mainYellow);
+  font-weight: 600;
+  margin-bottom: 6rem;
+  animation: moveToLeft 2s;
+}
+.heros span {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+}
+.heros p {
+  font-size: 4em;
+  color: #ddd;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: moveToRight 2s;
+}
+
+.heros button {
+  width: 190px;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 2px solid #daa;
+  outline: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.btn-1 {
+  background-color: var(--mainYellow);
+  color: #fff;
+  animation-name: animateBtn;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
+}
+.btn-1:hover {
+  background-color: var(--mainPurple);
+  color: #fff;
+}
+.btn-2 {
+  background-color: var(--mainSkyBlue);
+  color: #fff;
+  animation-name: animateBtn;
+  animation-duration: 1s;
+  animation-delay: 2.5s;
+  animation-fill-mode: backwards;
+}
+.btn-2:hover {
+  background-color: var(--mainGreen);
+  color: #fff;
+}
+
+@keyframes slider {
+  25% {
+    background-image: url(../img/2.jpeg);
+  }
+  45% {
+    background-image: url(../img/3.jpeg);
+  }
+  65% {
+    background-image: url(../img/4.jpeg);
+  }
+  100% {
+    background-image: url(../img/5.jpeg);
+  }
+}
+
+@keyframes moveToLeft {
+  from {
+    transform: translateX(120px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveToRight {
+  0% {
+    transform: translateX(-120px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes animateBtn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
